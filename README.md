@@ -2,7 +2,7 @@
 
 ## And thar's it ! Cool ! Nice ! Let's see screenshots below
 
-![image](https://ibb.co/4Wg6xXb)
+![image](https://ibb.co/PzmhtRP)
 
 ## Available Scripts
 
