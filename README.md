@@ -1,4 +1,4 @@
-# Getting Started with Create React App and Redux
+# CoinCap clone app with React, Redux ⚛️, SCSS & coincap api 🔥!
 
 ## Available Scripts
 
