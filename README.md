@@ -1,5 +1,9 @@
 # CoinCap clone app with React, Redux ⚛️, SCSS & coincap api 🔥!
 
+## And thar's it ! Cool ! Nice ! Let's see screenshots below
+
+![image](https://ibb.co/4Wg6xXb)
+
 ## Available Scripts
 
 In the project directory, you can run:
