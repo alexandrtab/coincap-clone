@@ -39,7 +39,6 @@ export const Currency = () => {
 
 	return (
 		<div>
-			<Header />
 			<div className="container">
 				<div className="currency-info">
 					<div className="currency-info__name">

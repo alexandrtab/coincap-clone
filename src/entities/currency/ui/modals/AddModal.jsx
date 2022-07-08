@@ -17,7 +17,7 @@ export const AddModal = () => {
 
 	const handleAddCurrencyToPortfolio = () => {
 		const currentCurrency = { ...activeCurrency, count: total };
-		if (count === 0) {
+		if (count <= 0) {
 			return alert("Count must be greater than zero!");
 		}
 		if (portfolioCurrencies && count !== 0) {
@@ -44,6 +44,7 @@ export const AddModal = () => {
 		<div className="add-modal-window">
 			<div className="change-count-block">
 				<h3>{activeCurrency?.name}</h3>
+				<h4>Price : ${parseFloat(activeCurrency?.priceUsd).toFixed(2)}</h4>
 				<input
 					onChange={(e) => handleChangeInput(e)}
 					value={count}

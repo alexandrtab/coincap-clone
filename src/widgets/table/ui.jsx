@@ -22,7 +22,7 @@ export const Table = () => {
 				<thead>
 					<tr>
 						<th>Rank</th>
-						<th>Name</th>
+						<th className="extra-inf">Name</th>
 						<th>Symbol</th>
 						<th>Price</th>
 						<th>Add</th>
@@ -36,7 +36,7 @@ export const Table = () => {
 									{item.rank}
 								</Link>
 							</td>
-							<td>
+							<td className="extra-inf">
 								<Link to="/currency" onClick={() => handleRedirectClick(item)}>
 									{item.name}
 								</Link>

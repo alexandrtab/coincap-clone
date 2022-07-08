@@ -4,13 +4,19 @@ import { setPortfolioCurrencies } from "../../model";
 export const PortfolioModal = () => {
 	const { portfolioCurrencies } = useSelector((store) => store.currency);
 	const dispatch = useDispatch();
-
 	const handleRemoveCurrencyFromPortfolio = (id) => {
+		let confirmDeleting = window.confirm(
+			"Delete this currency from Portfolio?"
+		);
 		const filteredPortfolio = portfolioCurrencies.filter(
 			(item) => item.id !== id
 		);
-		dispatch(setPortfolioCurrencies(filteredPortfolio));
-		localStorage.setItem("currencies", JSON.stringify(filteredPortfolio));
+		if (confirmDeleting) {
+			dispatch(setPortfolioCurrencies(filteredPortfolio));
+			localStorage.setItem("currencies", JSON.stringify(filteredPortfolio));
+		} else {
+			return;
+		}
 	};
 
 	return (

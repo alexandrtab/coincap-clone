@@ -34,3 +34,8 @@
 	max-width: 900px;
 	margin: auto;
 }
+@media (max-width: 425px) {
+	.extra-inf {
+		display: none;
+	}
+}

@@ -74,8 +74,8 @@ a {
 	}
 }
 .modal {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
 	position: fixed;
 	top: 0;
@@ -86,8 +86,9 @@ a {
 	opacity: 0;
 	pointer-events: none;
 	transition: 0.5s;
+	z-index: 2;
 	&__content {
-		width: 40vw;
+		width: 40%;
 		padding: 20px;
 		border-radius: 15px;
 		background-color: $white;
@@ -100,6 +101,8 @@ a {
 	&.active {
 		opacity: 1;
 		pointer-events: all;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -110,5 +113,13 @@ a {
 	height: 100vh;
 	&__home {
 		text-align: center;
+	}
+}
+
+@media (max-width: 425px) {
+	.modal {
+		&__content {
+			width: 70%;
+		}
 	}
 }

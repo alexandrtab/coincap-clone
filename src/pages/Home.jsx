@@ -16,7 +16,7 @@ export const Home = () => {
 		handleGetData();
 	}, [limit]);
 	return (
-		<div>
+		<>
 			<Header />
 			<div className="container">
 				<Table />
@@ -26,6 +26,6 @@ export const Home = () => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
