@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { setActiveCurrency } from "../entities/currency/model";
-import { Modal, AddModal } from "../entities/currency/ui";
+import { Modal, AddModal } from "../components/modals/ui";
 import { handleGetCurrencyHistory } from "../entities/currency/api";
-import { handleGenerateCurrencyHistoryData } from "../widgets/currency";
+import { handleGenerateCurrencyHistoryData } from "../components/currency";
 import {
 	AreaChart,
 	Area,

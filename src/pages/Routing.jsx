@@ -5,7 +5,7 @@ import { Home } from "./Home";
 import { Currency } from "./Currency";
 import { Notfoundpage } from "./Notfoundpage";
 import { setPortfolioCurrencies } from "../entities/currency/model";
-import { Header } from "../widgets/header";
+import { Header } from "../components/header";
 
 export const Routing = () => {
 	const dispatch = useDispatch();

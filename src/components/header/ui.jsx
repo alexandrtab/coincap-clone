@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import Portfolio from "../../shared/assets/portfolio.png";
-import { PortfolioModal, Modal } from "../../entities/currency/ui";
+import { PortfolioModal, Modal } from "../modals/ui";
 import { getTopCurrencies } from "./lib";
 import { useSelector } from "react-redux";
 

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setPortfolioCurrencies } from "../../model";
+import { setPortfolioCurrencies } from "../../entities/currency/model";
 
 export const PortfolioModal = () => {
 	const { portfolioCurrencies } = useSelector((store) => store.currency);

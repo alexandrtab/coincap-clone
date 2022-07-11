@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Header } from "../widgets/header";
-import { Table } from "../widgets/table";
+import { Header } from "../components/header";
+import { Table } from "../components/table";
 import { handleGetCurrenciesData } from "../entities/currency/api";
 import { useDispatch } from "react-redux";
 import { setCurrenciesData } from "../entities/currency/model";

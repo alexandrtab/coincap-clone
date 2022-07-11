@@ -1,8 +1,8 @@
-@import "../../styles/widgets/table.scss";
-@import "../../styles/widgets/header.scss";
-@import "../../styles/modals/add-modal.scss";
-@import "../../styles/modals/portfolio-modal.scss";
-@import "../../styles/pages/currency.scss";
+@import "../../components/table/table.scss";
+@import "../../components/header/header.scss";
+@import "../../components/modals/add-modal.scss";
+@import "../../components/modals/portfolio-modal.scss";
+@import "../../pages/currency.scss";
 
 $white: #f9f9f9;
 $lite-green: rgb(24, 198, 131);
@@ -94,11 +94,11 @@ a {
 		background-color: $white;
 		transform: scale(0.5);
 		transition: 0.5s all;
-		&.active {
+		&_active {
 			transform: scale(1);
 		}
 	}
-	&.active {
+	&_active {
 		opacity: 1;
 		pointer-events: all;
 		width: 100%;

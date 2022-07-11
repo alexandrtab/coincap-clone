@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveCurrency } from "../../entities/currency/model";
-import { AddModal, Modal } from "../../entities/currency/ui";
+import { AddModal, Modal } from "../modals/ui";
 import { Link } from "react-router-dom";
 
 export const Table = () => {

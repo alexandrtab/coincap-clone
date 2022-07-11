@@ -5,11 +5,11 @@ export const Modal = ({ active, setActive, children }) => {
 	};
 	return (
 		<div
-			className={active ? "modal active" : "modal"}
+			className={active ? "modal modal_active" : "modal"}
 			onClick={handleModalClose}
 		>
 			<div
-				className={active ? "modal__content active" : "modal__content"}
+				className={active ? "modal__content modal__content_active" : "modal__content"}
 				onClick={(e) => e.stopPropagation()}
 			>
 				{children}

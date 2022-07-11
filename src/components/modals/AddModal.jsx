@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setPortfolioCurrencies } from "../../model/currencySlice";
+import { setPortfolioCurrencies } from "../../entities/currency/model/currencySlice";
 
 export const AddModal = () => {
 	const [count, setCount] = useState(0);
