@@ -1,4 +1,3 @@
-import { Header } from "../widgets/header";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { setActiveCurrency } from "../entities/currency/model";
@@ -14,6 +13,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from "recharts";
+import { Link } from "react-router-dom";
 
 export const Currency = () => {
 	const { activeCurrency } = useSelector((store) => store.currency);
@@ -41,6 +41,9 @@ export const Currency = () => {
 		<div>
 			<div className="container">
 				<div className="currency-info">
+					<Link to="/">
+						<p>Back to Home</p>
+					</Link>
 					<div className="currency-info__name">
 						<h3>{activeCurrency.name}</h3>
 					</div>
@@ -50,7 +53,7 @@ export const Currency = () => {
 							Change Percent :
 							{parseFloat(activeCurrency.changePercent24Hr).toFixed(2)}
 						</p>
-						<p>Rank : {parseFloat(activeCurrency.rank).toFixed(2)}</p>
+						<p>Rank : {activeCurrency.rank}</p>
 						<p>PriceUSD : {parseFloat(activeCurrency.priceUsd).toFixed(2)}</p>
 						<p>Supply : {parseFloat(activeCurrency.supply).toFixed(2)}</p>
 						<button
