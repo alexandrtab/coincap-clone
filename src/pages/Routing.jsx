@@ -8,20 +8,20 @@ import { setPortfolioCurrencies } from "../entities/currency/model";
 import { Header } from "../components/header";
 
 export const Routing = () => {
-	const dispatch = useDispatch();
-	useEffect(() => {
-		dispatch(
-			setPortfolioCurrencies(JSON.parse(localStorage.getItem("currencies")))
-		);
-	}, []);
-	return (
-		<>
-			<Header />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/currency" element={<Currency />} />
-				<Route path="*" element={<Notfoundpage />} />
-			</Routes>
-		</>
-	);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(
+      setPortfolioCurrencies(JSON.parse(localStorage.getItem("currencies")))
+    );
+  }, []);
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/currency" element={<Currency />} />
+        <Route path="*" element={<Notfoundpage />} />
+      </Routes>
+    </>
+  );
 };

@@ -1,0 +1,32 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"jest": true
+	},
+	"extends": ["react-app", "react-app/jest", "eslint:recommended"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": ["react"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"no-console": "error",
+		"indent": ["error", 2]
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx"],
+				"moduleDirectory": ["node_modules", "src/", "index.js"]
+			}
+		},
+		"react": {
+			"version": "detect"
+		}
+	}
+}
