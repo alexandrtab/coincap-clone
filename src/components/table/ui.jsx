@@ -41,7 +41,7 @@ export const Table = () => {
                     {item.rank}
                   </Link>
                 </td>
-                <td className="extra-inf">
+                <td className="currency__content__table-extra">
                   <Link
                     to="/currency"
                     onClick={() => handleRedirectClick(item)}
@@ -57,7 +57,7 @@ export const Table = () => {
                     {item.symbol}
                   </Link>
                 </td>
-                <td><span style={{color:"#21f507"}}> $ </span>{parseFloat(item.priceUsd).toFixed(2)}</td>
+                <td><span style={{color:"#21f507"}}>$</span>{parseFloat(item.priceUsd).toFixed(2)}</td>
                 <td>
                   <Button
                     children={"+"}
