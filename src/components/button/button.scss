@@ -1,0 +1,45 @@
+$white: #f9f9f9;
+$lite-green: rgb(24, 198, 131);
+
+.btn {
+	border: none;
+	transition: transform 0.2s ease 0s;
+	box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
+	color: $white;
+	border-radius: 10em;
+	font-size: 1rem;
+	cursor: pointer;
+	min-height: 1em;
+	vertical-align: baseline;
+	font-weight: 700;
+	outline: none;
+	&-container {
+		display: flex;
+		justify-content: center;
+	}
+	&-big {
+		background-color: $lite-green;
+		padding: 11px 21px;
+		margin: 1rem 0 1rem;
+		&:hover {
+			transform: translateY(-2px);
+		}
+	}
+	&-remove {
+		background-color: rgb(197, 26, 26);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+	}
+	&-add {
+		background-color: $lite-green;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+	}
+	&-portfolio {
+		width: 60px;
+		height: 60px;
+		background-color: rgb(240, 240, 240);
+	}
+}

@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from "react";
 import Portfolio from "../../shared/assets/portfolio.png";
-import { PortfolioModal, Modal } from "../modals/ui";
+import { PortfolioModal, Modal } from "../modals/index";
 import { getTopCurrencies } from "./lib";
 import { useSelector } from "react-redux";
+import { Button } from "../button";
 
 export const Header = () => {
   const { currenciesData, portfolioCurrencies } = useSelector(
@@ -29,7 +30,6 @@ export const Header = () => {
     calcPortfolioTotalPrice();
   }, [portfolioCurrencies]);
 
-
   return (
     <header>
       {topCurrency?.map(({ id, name, priceUsd }) => (
@@ -40,16 +40,17 @@ export const Header = () => {
       <p className="top-currency">
 				Portfolio: {parseFloat(portfolioPrice).toFixed(2)} USD
       </p>
-      <button
-        className="btn btn__portfolio"
-        onClick={() => handleOpenPortfolio()}
+      <Button
+        className={"btn-portfolio"}
+        type="button"
+        onClickButton={() => handleOpenPortfolio()}
       >
         <img
           src={Portfolio}
           alt="portfolio"
           style={{ width: "40px", height: "40px" }}
         />
-      </button>
+      </Button>
       <Modal active={modalActive} setActive={setModalActive}>
         <PortfolioModal />
       </Modal>

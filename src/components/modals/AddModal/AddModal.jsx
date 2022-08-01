@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setPortfolioCurrencies } from "../../entities/currency/model/currencySlice";
+import { setPortfolioCurrencies } from "../../../entities/currency/model/currencySlice";
+import { Button } from "../../button";
 
 export const AddModal = () => {
   const [count, setCount] = useState(0);
@@ -41,8 +42,8 @@ export const AddModal = () => {
     setTotal(0);
   };
   return (
-    <div className="add-modal-window">
-      <div className="change-count-block">
+    <form className="add-modal-window" onSubmit={handleAddCurrencyToPortfolio}>
+      <div className="add-modal-window__change-block">
         <h3>{activeCurrency?.name}</h3>
         <h4>Price : ${parseFloat(activeCurrency?.priceUsd).toFixed(2)}</h4>
         <input
@@ -54,14 +55,12 @@ export const AddModal = () => {
           placeholder="0"
         />
       </div>
-      <div className="total-price">
+      <div className="add-modal-window__total-price">
         <p>Total price : {total}$</p>
       </div>
-      <div className="btn__container">
-        <button className="btn btn__big" onClick={handleAddCurrencyToPortfolio}>
-					Submit
-        </button>
+      <div className="btn-container">
+        <Button type="submit" className="btn-big" isSubmit={true} children={"Submit"} onClick={handleAddCurrencyToPortfolio}/>
       </div>
-    </div>
+    </form>
   );
 };

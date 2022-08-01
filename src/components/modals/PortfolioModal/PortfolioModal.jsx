@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setPortfolioCurrencies } from "../../entities/currency/model";
+import { setPortfolioCurrencies } from "../../../entities/currency/model";
+import { Button } from "../../button";
 
 export const PortfolioModal = () => {
   const { portfolioCurrencies } = useSelector((store) => store.currency);
@@ -20,21 +21,21 @@ export const PortfolioModal = () => {
   };
 
   return (
-    <div className="modal-window">
+    <div className="portfolio-modal-window">
       <h3>My Portfolio</h3>
-      <ul className="portfolio-list">
+      <ul className="portfolio-modal-window__list">
         {portfolioCurrencies?.length ? (
           portfolioCurrencies.map(({ id, name, count }) => (
             <li key={id}>
               <div>
-                <p className="portfolio-list__name">{name}</p>
+                <p className="portfolio-modal-window__list__name">{name}</p>
                 <p>{count}</p>
-                <button
-                  className="btn btn__remove"
-                  onClick={() => handleRemoveCurrencyFromPortfolio(id)}
-                >
-									-
-                </button>
+                <Button
+                  children={"-"}
+                  className={"btn-remove"}
+                  type={"button"}
+                  onClickButton={() => handleRemoveCurrencyFromPortfolio(id)}
+                />
               </div>
             </li>
           ))

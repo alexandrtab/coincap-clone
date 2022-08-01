@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { setActiveCurrency } from "../entities/currency/model";
-import { Modal, AddModal } from "../components/modals/ui";
+import { Modal, AddModal } from "../components/modals/index";
 import { handleGetCurrencyHistory } from "../entities/currency/api";
-import { handleGenerateCurrencyHistoryData } from "../components/currency";
+import { handleGenerateCurrencyHistoryData } from "../utils/lib";
 import {
   AreaChart,
   Area,
@@ -14,6 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { Link } from "react-router-dom";
+import { Button } from "../components/button";
 
 export const Currency = () => {
   const { activeCurrency } = useSelector((store) => store.currency);
@@ -41,9 +42,11 @@ export const Currency = () => {
     <div>
       <div className="container">
         <div className="currency-info">
-          <Link to="/">
-            <p>Back to Home</p>
-          </Link>
+          <div>
+            <Link to="/">
+              <p>{"< Back to Home"}</p>
+            </Link>
+          </div>
           <div className="currency-info__name">
             <h3>{activeCurrency.name}</h3>
           </div>
@@ -56,12 +59,7 @@ export const Currency = () => {
             <p>Rank : {activeCurrency.rank}</p>
             <p>PriceUSD : {parseFloat(activeCurrency.priceUsd).toFixed(2)}</p>
             <p>Supply : {parseFloat(activeCurrency.supply).toFixed(2)}</p>
-            <button
-              className="btn btn__big"
-              onClick={() => handleAddClick(activeCurrency)}
-            >
-							BUY
-            </button>
+            <Button children={"BUY"} className={"btn-big"} type={"button"} onClickButton={() => handleAddClick(activeCurrency)}/>
           </div>
         </div>
         <div className="currency-graphic">

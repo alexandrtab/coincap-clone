@@ -1,41 +1,43 @@
-.table {
-	width: 100%;
-	text-align: center;
-	background-color: white;
-	border-collapse: collapse;
-	box-shadow: 0px 0px 21px -2px rgba(34, 60, 80, 0.21);
-	thead {
-		background-color: rgb(100, 181, 246);
-		color: white;
-		font-size: 1rem;
-		tr {
-			th {
-				font-weight: 300;
-				padding: 1rem;
+.currency {
+	&__content {
+		max-width: 900px;
+		margin: auto;
+		&__table {
+			width: 100%;
+			text-align: center;
+			background-color: white;
+			border-collapse: collapse;
+			box-shadow: 0px 0px 21px -2px rgba(34, 60, 80, 0.21);
+			thead {
+				background-color: rgb(100, 181, 246);
+				color: white;
+				font-size: 1rem;
+				tr {
+					th {
+						font-weight: 700;
+						padding: 1rem;
+					}
+				}
+			}
+			tbody {
+				background-color: white;
+				font-size: 1.25rem;
+				tr {
+					border-bottom: 1px solid rgb(226, 226, 226);
+					&:hover {
+						transition: 0.25s;
+						background-color: rgb(246, 246, 246);
+					}
+					td {
+						padding: 1rem;
+					}
+				}
 			}
 		}
 	}
-	tbody {
-		background-color: white;
-		font-size: 1.25rem;
-		tr {
-			border-bottom: 1px solid rgb(226, 226, 226);
-			&:hover {
-				transition: 0.25s;
-				background-color: rgb(246, 246, 246);
-			}
-			td {
-				padding: 1rem;
-			}
-		}
-	}
-}
-.currensy {
-	max-width: 900px;
-	margin: auto;
 }
 @media (max-width: 425px) {
-	.extra-inf {
+	.currency__content__table-extra {
 		display: none;
 	}
 }

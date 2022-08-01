@@ -1,8 +1,10 @@
 @import "../../components/table/table.scss";
 @import "../../components/header/header.scss";
-@import "../../components/modals/add-modal.scss";
-@import "../../components/modals/portfolio-modal.scss";
+@import "../../components/modals/AddModal/add-modal.scss";
+@import "../../components/modals/PortfolioModal/portfolio-modal.scss";
+@import "../../components/modals/Modal/modal.scss";
 @import "../../pages/currency.scss";
+@import "../../components/button/button.scss";
 
 $white: #f9f9f9;
 $lite-green: rgb(24, 198, 131);
@@ -31,79 +33,6 @@ a {
 .container {
 	max-width: 1605px;
 	margin: 100px auto 0;
-}
-.btn {
-	border: none;
-	transition: transform 0.2s ease 0s;
-	box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
-	color: $white;
-	border-radius: 10em;
-	font-size: 1rem;
-	cursor: pointer;
-	min-height: 1em;
-	vertical-align: baseline;
-	font-weight: 700;
-	&__container {
-		display: flex;
-		justify-content: center;
-	}
-	&__big {
-		background-color: $lite-green;
-		padding: 11px 21px;
-		margin: 1rem 0 1rem;
-		&:hover {
-			transform: translateY(-2px);
-		}
-	}
-	&__remove {
-		background-color: rgb(197, 26, 26);
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-	}
-	&__add {
-		background-color: $lite-green;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-	}
-	&__portfolio {
-		width: 60px;
-		height: 60px;
-		background-color: rgb(240, 240, 240);
-	}
-}
-.modal {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.4);
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 0;
-	pointer-events: none;
-	transition: 0.5s;
-	z-index: 2;
-	&__content {
-		width: 40%;
-		padding: 20px;
-		border-radius: 15px;
-		background-color: $white;
-		transform: scale(0.5);
-		transition: 0.5s all;
-		&_active {
-			transform: scale(1);
-		}
-	}
-	&_active {
-		opacity: 1;
-		pointer-events: all;
-		width: 100%;
-		height: 100%;
-	}
 }
 
 .not-found {

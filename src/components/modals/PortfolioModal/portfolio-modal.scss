@@ -1,0 +1,21 @@
+.portfolio-modal-window {
+	max-height: 60vh;
+	overflow-y: auto;
+	&__list {
+		list-style: none;
+		margin-top: 1rem;
+		li {
+			padding-bottom: 1rem;
+			margin-bottom: 1.5rem;
+			border-bottom: 1px solid rgb(200, 200, 200);
+			div {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+		&__name {
+			width: 90px;
+		}
+	}
+}

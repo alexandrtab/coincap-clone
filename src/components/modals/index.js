@@ -1,3 +1,3 @@
-export * from "./AddModal";
-export * from "./Modal";
-export * from "./PortfolioModal";
+export * from "./AddModal/AddModal";
+export * from "./Modal/Modal";
+export * from "./PortfolioModal/PortfolioModal";
