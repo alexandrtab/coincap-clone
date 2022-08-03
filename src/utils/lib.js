@@ -1,5 +1,4 @@
-export const handleGenerateCurrencyHistoryData = (data) => {
-  return data.map((item) => {
+export const handleGenerateCurrencyHistoryData = (data) => data.map((item) => {
     const currentItemDate = new Date(item.time);
     const numberDays = currentItemDate.getDate();
     const numberMonths = currentItemDate.getMonth();
@@ -10,4 +9,3 @@ export const handleGenerateCurrencyHistoryData = (data) => {
       time: `${numberDays}-${numberMonths}-${currentYear}`,
     };
   });
-};

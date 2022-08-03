@@ -3,7 +3,7 @@
 @import "../../components/modals/AddModal/add-modal.scss";
 @import "../../components/modals/PortfolioModal/portfolio-modal.scss";
 @import "../../components/modals/Modal/modal.scss";
-@import "../../pages/currency.scss";
+@import "../../pages/Currency/currency.scss";
 @import "../../components/button/button.scss";
 
 $white: #f9f9f9;
@@ -44,7 +44,20 @@ a {
 		text-align: center;
 	}
 }
-
+.dollar-sign {
+	color: $lite-green;
+	font-weight: 600;
+}
+.greeting {
+	&__content {
+		max-width: 900px;
+		margin: 0 auto 30px;
+		&__title{
+			font-weight:900;
+			letter-spacing: 2px;
+		}
+	}
+}
 @media (max-width: 425px) {
 	.modal {
 		&__content {

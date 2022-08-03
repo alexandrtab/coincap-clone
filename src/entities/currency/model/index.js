@@ -1,1 +1,1 @@
-export * from "./currencySlice"
+export * from "./currencySlice";

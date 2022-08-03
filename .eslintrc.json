@@ -12,11 +12,135 @@
 		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
-	"plugins": ["react"],
+	"plugins": ["react", "react-hooks", "import"],
 	"rules": {
-		"react/react-in-jsx-scope": "off",
-		"no-console": "error",
-		"indent": ["error", 2]
+		"quotes": [
+			"error",
+			"double",
+			{
+				"avoidEscape": true,
+				"allowTemplateLiterals": true
+			}
+		], // http://eslint.org/docs/rules/quotes
+		// "prettier/prettier": ["error"],
+		"import/prefer-default-export": "off",
+		"import/newline-after-import": ["error", { "count": 1 }],
+		"no-console": "warn",
+		"strict": ["error", "function"],
+		"no-trailing-spaces": "error",
+		"eol-last": "error", // http://eslint.org/docs/rules/eol-last
+		"styled-components-a11y/no-autofocus": "off",
+		"no-empty-function": "off",
+		"no-use-before-define": "off",
+		"import/no-unresolved": "off",
+		"arrow-body-style": ["error", "as-needed"],
+		"arrow-spacing": [
+			"error",
+			{
+				"before": true,
+				"after": true
+			}
+		],
+		"brace-style": [
+			"error", // http://eslint.org/docs/rules/brace-style
+			"1tbs",
+			{
+				"allowSingleLine": true
+			}
+		],
+		"camelcase": [
+			"error",
+			{
+				"properties": "never"
+			}
+		],
+		"comma-spacing": [
+			"error",
+			{
+				// http://eslint.org/docs/rules/comma-spacing
+				"before": false,
+				"after": true
+			}
+		],
+		"comma-style": ["error", "last"], // http://eslint.org/docs/rules/comma-style
+		"key-spacing": [
+			"error",
+			{
+				"beforeColon": false,
+				"afterColon": true
+			}
+		], // http://eslint.org/docs/rules/key-spacing
+		"newline-after-var": ["error", "always"],
+		"newline-before-return": "error",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"no-mixed-spaces-and-tabs": "error", // http://eslint.org/docs/rules/no-mixed-spaces-and-tabs
+		"no-multi-spaces": "error",
+		"no-nested-ternary": "error", // http://eslint.org/docs/rules/no-nested-ternary
+		"no-new-object": "error", // http://eslint.org/docs/rules/no-new-object
+		"no-spaced-func": "error", // http://eslint.org/docs/rules/no-spaced-func
+		"no-extra-parens": "off", // http://eslint.org/docs/rules/no-extra-parens
+		"no-useless-escape": "off", //http://eslint.org/docs/rules/no-useless-escape
+		"object-curly-spacing": ["error", "always"],
+		"one-var": ["error", "never"], // http://eslint.org/docs/rules/one-var
+		"semi": ["error", "always"], // http://eslint.org/docs/rules/semi
+		"semi-spacing": [
+			"error",
+			{
+				// http://eslint.org/docs/rules/semi-spacing
+				"before": false,
+				"after": true
+			}
+		],
+		"keyword-spacing": "error", // http://eslint.org/docs/2.0.0/rules/keyword-spacing
+		"space-before-blocks": "error", // http://eslint.org/docs/rules/space-before-blocks
+		"space-before-function-paren": [
+			"error",
+			{
+				// http://eslint.org/docs/rules/space-before-function-paren
+				"anonymous": "always",
+				"named": "always"
+			}
+		],
+		"space-infix-ops": "error", // http://eslint.org/docs/rules/space-infix-ops,
+		"space-in-parens": ["error", "never"],
+		"no-underscore-dangle": "off", // http://eslint.org/docs/rules/no-underscore-dangle
+		"react-hooks/exhaustive-deps": [
+			"off",
+			{
+				"additionalHooks": "useDispatch|useOtherHookWhichWillDefinitelyNotChange"
+			}
+		],
+		"react/jsx-curly-spacing": [
+			"error",
+			{
+				"when": "always"
+			}
+		],
+		"react/jsx-indent": [1, "tab"],
+		"react/jsx-indent-props": [1, "tab"],
+		"react/jsx-no-bind": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/require-default-props": "off",
+		"import/order": [
+			"error",
+			{
+				"groups": ["external", ["parent", "sibling"]],
+				"pathGroups": [
+					{
+						"pattern": "**/*.scss",
+						"group": "index",
+						"position": "after"
+					}
+				],
+				"newlines-between": "always"
+			}
+		],
+		"jsx-a11y/label-has-associated-control": "off"
 	},
 	"settings": {
 		"import/resolver": {
