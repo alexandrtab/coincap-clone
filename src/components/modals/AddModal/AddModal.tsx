@@ -4,7 +4,7 @@ import { useAppSelector, useAppDispatch } from "../../../app/hooks/useRedux";
 import { setPortfolioCurrencies } from "../../../entities/currency/model/currencySlice";
 import { Button } from "../../button";
 
-export const AddModal = () => {
+export const AddModal: React.FC = () => {
 	const [count, setCount] = useState(0);
 	const [total, setTotal] = useState(0);
 	const dispatch = useAppDispatch();
@@ -13,8 +13,10 @@ export const AddModal = () => {
 		(store) => store.currency
 	);
 	const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setCount(e.target.value);
-		setTotal(parseFloat(e.target.value * activeCurrency.priceUsd).toFixed(2));
+		setCount(+e.target.value);
+		if (activeCurrency) {
+			setTotal(+parseFloat(`${+e.target.value * activeCurrency.priceUsd}`).toFixed(2));
+		}
 	};
 
 	const handleAddCurrencyToPortfolio = (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,13 +46,22 @@ export const AddModal = () => {
 			alert("CONGRADULATE! New currency has been already added to portfolio!");
 		} else {
 			dispatch(setPortfolioCurrencies([{ ...currentCurrency, id: 1 }]));
-			localStorage.setItem(
-				portfolioCurrencies.name,
-				JSON.stringify([
-					...portfolioCurrencies,
-					[{ ...currentCurrency, id: 1 }],
-				])
-			);
+			if (portfolioCurrencies) {
+				localStorage.setItem(
+					"currencies",
+					JSON.stringify([
+						...portfolioCurrencies,
+						{ ...currentCurrency, id: 1 },
+					])
+				);
+			} else {
+				localStorage.setItem(
+					"currencies",
+					JSON.stringify([
+						{ ...currentCurrency, id: 1 },
+					])
+				);
+			}
 		}
 
 		setCount(0);
@@ -64,7 +75,7 @@ export const AddModal = () => {
 		>
 			<div className="add-modal-window__change-block">
 				<h3>{activeCurrency?.name}</h3>
-				<h4>Price : <span className="dollar-sign">$ </span>{parseFloat(activeCurrency?.priceUsd).toFixed(2)}</h4>
+				<h4>Price : <span className="dollar-sign">$ </span>{parseFloat(`${activeCurrency?.priceUsd}`).toFixed(2)}</h4>
 				<input
 					onChange={ (e) => handleChangeInput(e) }
 					value={ count }

@@ -5,7 +5,7 @@ import { ICurrency } from "../../../pages/Currency/types";
 const initialState = {
 	portfolioCurrencies: null as ICurrency[] | null,
 	activeCurrency: null as ICurrency | null,
-	currenciesData: [],
+	currenciesData: null as ICurrency[] | null,
 };
 
 export const currencySlice = createSlice({

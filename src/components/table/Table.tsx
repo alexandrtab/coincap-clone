@@ -61,7 +61,7 @@ export const Table: React.FC = () => {
 										{item.symbol}
 									</Link>
 								</td>
-								<td><span className="dollar-sign">$ </span>{parseFloat(item.priceUsd).toFixed(2)}</td>
+								<td><span className="dollar-sign">$ </span>{parseFloat(`${item.priceUsd}`).toFixed(2)}</td>
 								<td>
 									<Button
 										isSubmit={ false }

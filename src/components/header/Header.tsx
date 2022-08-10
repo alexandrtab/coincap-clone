@@ -11,9 +11,9 @@ export const Header = () => {
 		(store) => store.currency
 	);
 	const [modalActive, setModalActive] = useState(false);
-	const [portfolioPrice, setPortfolioPrice] = useState("0");
+	const [portfolioPrice, setPortfolioPrice] = useState(0);
 	const topCurrency = useMemo(
-		() => getTopCurrencies(currenciesData),
+		() => currenciesData && getTopCurrencies(currenciesData),
 		[currenciesData]
 	);
 
@@ -23,7 +23,7 @@ export const Header = () => {
 	}
 
 	const calcPortfolioTotalPrice = () => {
-		let priceResult = "0";
+		let priceResult = 0;
 
 		portfolioCurrencies?.forEach(({ count }) => {
 			priceResult += +count;
@@ -40,11 +40,11 @@ export const Header = () => {
 			{topCurrency?.map(({ id, name, priceUsd }) => (
 				<p key={ id } className="top-currency">
 					{name} : <span className="dollar-sign"> $ </span>
-					{parseFloat(priceUsd).toFixed(2)}
+					{parseFloat(`${priceUsd}`).toFixed(2)}
 				</p>
 			))}
 			<p className="top-currency">
-				Portfolio : {parseFloat(portfolioPrice).toFixed(2)} USD
+				Portfolio : {parseFloat(`${portfolioPrice}`).toFixed(2)} USD
 			</p>
 			<Button
 				className={ "btn-portfolio" }

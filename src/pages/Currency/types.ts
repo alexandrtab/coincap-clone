@@ -5,7 +5,7 @@ export interface ICurrency {
 	marketCapUsd: number;
 	maxSupply: number;
 	name: string;
-	priceUsd: string;
+	priceUsd: number;
 	rank: number;
 	supply: string;
 	symbol: string;

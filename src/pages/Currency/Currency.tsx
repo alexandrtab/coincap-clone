@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	AreaChart,
 	Area,
@@ -18,11 +17,12 @@ import { handleGenerateCurrencyHistoryData } from "../../utils/lib";
 import { Button } from "../../components/button";
 import { ICurrency } from "./types";
 import { useAppSelector, useAppDispatch } from "../../app/hooks/useRedux";
+import { IHistoryData } from "../../utils/types";
 
 export const Currency: React.FC = () => {
 	const { activeCurrency } = useAppSelector((store) => store.currency);
 	const [modalActive, setModalActive] = useState(false);
-	const [currentHistory, setCurrentHistory] = useState([]);
+	const [currentHistory, setCurrentHistory] = useState<IHistoryData[]>([]);
 	const dispatch = useAppDispatch();
 	const handleAddClick = (currency: ICurrency) => {
 		setModalActive(true);
@@ -30,9 +30,11 @@ export const Currency: React.FC = () => {
 		dispatch(setActiveCurrency(currency));
 	};
 	const handleLoadCurrencyHistory = async () => {
-		const history = await handleGetCurrencyHistory(activeCurrency?.id);
+		if (activeCurrency) {
+			const history = await handleGetCurrencyHistory(activeCurrency?.id);
 
-		setCurrentHistory(handleGenerateCurrencyHistoryData(history));
+			setCurrentHistory(handleGenerateCurrencyHistoryData(history));
+		}
 	};
 
 	useEffect(() => {
@@ -61,7 +63,7 @@ export const Currency: React.FC = () => {
 							Change Percent : {parseFloat(activeCurrency.changePercent24Hr).toFixed(2)}
 						</p>
 						<p>Rank : {activeCurrency.rank}</p>
-						<p>PriceUSD : {parseFloat(activeCurrency.priceUsd).toFixed(2)}</p>
+						<p>PriceUSD : {parseFloat(`${activeCurrency.priceUsd}`).toFixed(2)}</p>
 						<p>Supply : {parseFloat(activeCurrency.supply).toFixed(2)}</p>
 						<Button text={ "BUY" } isSubmit={ false } className={ "btn-big" } type={ "button" } onClickButton={ () => handleAddClick(activeCurrency) }/>
 					</div>

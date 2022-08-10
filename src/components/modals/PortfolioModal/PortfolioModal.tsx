@@ -9,7 +9,7 @@ export const PortfolioModal = () => {
 		const confirmDeleting = window.confirm(
 			"Delete this currency from Portfolio?"
 		);
-		const filteredPortfolio = portfolioCurrencies.filter(
+		const filteredPortfolio = portfolioCurrencies?.filter(
 			(item) => item.id !== id
 		);
 

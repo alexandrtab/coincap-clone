@@ -8,6 +8,7 @@ export const Button: React.FC<IButtonProps> = ({
 	onClickButton,
 	isSubmit,
 	className,
+	children
 }) => (
 	<>
 		{isSubmit ? (
@@ -23,6 +24,7 @@ export const Button: React.FC<IButtonProps> = ({
 				type={ type }
 				onClick={ onClickButton }
 			>
+				{children}
 				{text}
 			</button>
 		)}

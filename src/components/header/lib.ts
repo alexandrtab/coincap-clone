@@ -1,5 +1,7 @@
-export const getTopCurrencies = (currency: []) => {
-	if (currency?.length) {
-		return currency.slice(0, 3);
+import { ICurrency } from "../../pages/Currency/types";
+
+export const getTopCurrencies = (currencies: ICurrency[]) => {
+	if (currencies?.length) {
+		return currencies.slice(0, 3);
 	}
 };
