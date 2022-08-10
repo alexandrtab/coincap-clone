@@ -1,6 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-export const Notfoundpage = () => (
+export const Notfoundpage: React.FC = () => (
 	<div className="not-found">
 		<h3>
 			This page does not exist: :( Return back to
@@ -9,4 +10,4 @@ export const Notfoundpage = () => (
 			</Link>
 		</h3>
 	</div>
-  );
+);

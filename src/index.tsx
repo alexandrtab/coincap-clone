@@ -7,15 +7,18 @@ import { store } from "./app/store";
 import "./app/styles/globals.scss";
 import { Routing } from "./pages/Routing";
 
-const container = document.getElementById("root");
-const root = createRoot(container);
+const rootElem = document.getElementById("root");
 
-root.render(
-	<React.StrictMode>
-		<Provider store={ store }>
-			<BrowserRouter>
-				<Routing />
-			</BrowserRouter>
-		</Provider>
-	</React.StrictMode>
-);
+if (rootElem) {
+	const root = createRoot(rootElem);
+
+	root.render(
+		<React.StrictMode>
+			<Provider store={ store }>
+				<BrowserRouter>
+					<Routing />
+				</BrowserRouter>
+			</Provider>
+		</React.StrictMode>
+	);
+}
