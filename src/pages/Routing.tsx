@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
@@ -9,7 +8,7 @@ import { Notfoundpage } from "./Notfoundpage/Notfoundpage";
 import { setPortfolioCurrencies } from "../entities/currency/model";
 import { Header } from "../components/header";
 
-export const Routing: React.FC= () => {
+export const Routing: React.FC = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
