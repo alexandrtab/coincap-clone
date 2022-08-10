@@ -25,10 +25,12 @@ export const Header = () => {
 	const calcPortfolioTotalPrice = () => {
 		let priceResult = 0;
 
-		portfolioCurrencies?.forEach(({ count }) => {
-			priceResult += +count;
-		});
-		setPortfolioPrice(priceResult);
+		if (portfolioCurrencies?.length) {
+			portfolioCurrencies?.forEach(({ count }) => {
+				priceResult += +count;
+			});
+			setPortfolioPrice(priceResult);
+		}
 	};
 
 	useEffect(() => {
