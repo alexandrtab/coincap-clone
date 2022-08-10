@@ -1,19 +1,19 @@
 import { useState, useMemo, useEffect } from "react";
-import { useSelector } from "react-redux";
 
+import { useAppSelector } from "../../app/hooks/useRedux";
 import Portfolio from "../../shared/assets/portfolio.png";
 import { PortfolioModal, Modal } from "../modals/index";
 import { getTopCurrencies } from "./lib";
 import { Button } from "../button";
 
 export const Header = () => {
-	const { currenciesData, portfolioCurrencies } = useSelector(
+	const { currenciesData, portfolioCurrencies } = useAppSelector(
 		(store) => store.currency
 	);
 	const [modalActive, setModalActive] = useState(false);
 	const [portfolioPrice, setPortfolioPrice] = useState(0);
 	const topCurrency = useMemo(
-		() => getTopCurrencies(currenciesData),
+		() => currenciesData && getTopCurrencies(currenciesData),
 		[currenciesData]
 	);
 
@@ -40,15 +40,17 @@ export const Header = () => {
 			{topCurrency?.map(({ id, name, priceUsd }) => (
 				<p key={ id } className="top-currency">
 					{name} : <span className="dollar-sign"> $ </span>
-					{parseFloat(priceUsd).toFixed(2)}
+					{parseFloat(`${priceUsd}`).toFixed(2)}
 				</p>
 			))}
 			<p className="top-currency">
-				Portfolio : {parseFloat(portfolioPrice).toFixed(2)} USD
+				Portfolio : {parseFloat(`${portfolioPrice}`).toFixed(2)} USD
 			</p>
 			<Button
 				className={ "btn-portfolio" }
 				type="button"
+				text=""
+				isSubmit={ false }
 				onClickButton={ () => handleOpenPortfolio() }
 			>
 				<img
