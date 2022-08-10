@@ -6,7 +6,7 @@ import { PortfolioModal, Modal } from "../modals/index";
 import { getTopCurrencies } from "./lib";
 import { Button } from "../button";
 
-export const Header = () => {
+export const Header: React.FC = () => {
 	const { currenciesData, portfolioCurrencies } = useAppSelector(
 		(store) => store.currency
 	);

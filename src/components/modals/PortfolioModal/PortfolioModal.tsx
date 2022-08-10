@@ -2,7 +2,7 @@ import { useAppSelector, useAppDispatch } from "../../../app/hooks/useRedux";
 import { setPortfolioCurrencies } from "../../../entities/currency/model";
 import { Button } from "../../button";
 
-export const PortfolioModal = () => {
+export const PortfolioModal: React.FC = () => {
 	const { portfolioCurrencies } = useAppSelector((store) => store.currency);
 	const dispatch = useAppDispatch();
 	const handleRemoveCurrencyFromPortfolio = (id: string) => {
