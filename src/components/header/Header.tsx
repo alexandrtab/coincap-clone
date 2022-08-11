@@ -10,8 +10,8 @@ export const Header: React.FC = () => {
 	const { currenciesData, portfolioCurrencies } = useAppSelector(
 		(store) => store.currency
 	);
-	const [modalActive, setModalActive] = useState(false);
-	const [portfolioPrice, setPortfolioPrice] = useState(0);
+	const [modalActive, setModalActive] = useState<boolean>(false);
+	const [portfolioPrice, setPortfolioPrice] = useState<number>(0);
 	const topCurrency = useMemo(
 		() => currenciesData && getTopCurrencies(currenciesData),
 		[currenciesData]
@@ -30,6 +30,8 @@ export const Header: React.FC = () => {
 				priceResult += +count;
 			});
 			setPortfolioPrice(priceResult);
+		} else {
+			setPortfolioPrice(0);
 		}
 	};
 

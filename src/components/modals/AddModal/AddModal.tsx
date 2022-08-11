@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { useAppSelector, useAppDispatch } from "../../../app/hooks/useRedux";
 import { setPortfolioCurrencies } from "../../../entities/currency/model/currencySlice";
 import { Button } from "../../button";
 
 export const AddModal: React.FC = () => {
-	const [count, setCount] = useState(0);
-	const [total, setTotal] = useState(0);
+	const [count, setCount] = useState<number | null>(null);
+	const [total, setTotal] = useState<number>(0);
 	const dispatch = useAppDispatch();
+	const inputElement = useRef<HTMLInputElement>(null);
+
+	useEffect(() => {
+		if (inputElement.current) {
+			inputElement.current.focus();
+		}
+	}, []);
 
 	const { activeCurrency, portfolioCurrencies } = useAppSelector(
 		(store) => store.currency
@@ -23,6 +30,7 @@ export const AddModal: React.FC = () => {
 		e.preventDefault();
 		const currentCurrency = { ...activeCurrency, count: total };
 
+		if (count == undefined) {return null;}
 		if (count <= 0) {
 			return alert("Count must be greater than zero!");
 		}
@@ -64,7 +72,7 @@ export const AddModal: React.FC = () => {
 			}
 		}
 
-		setCount(0);
+		setCount(null);
 		setTotal(0);
 	};
 
@@ -77,8 +85,10 @@ export const AddModal: React.FC = () => {
 				<h3>{activeCurrency?.name}</h3>
 				<h4>Price : <span className="dollar-sign">$ </span>{parseFloat(`${activeCurrency?.priceUsd}`).toFixed(2)}</h4>
 				<input
+					autoFocus={ true }
+					ref={ inputElement }
 					onChange={ (e) => handleChangeInput(e) }
-					value={ count }
+					value={ count ?? "" }
 					type="number"
 					min="0"
 					step="0.1"

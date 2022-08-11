@@ -8,7 +8,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks/useRedux";
 import { ICurrency } from "../../pages/Currency/types";
 
 export const Table: React.FC = () => {
-	const [modalActive, setModalActive] = useState(false);
+	const [modalActive, setModalActive] = useState<boolean>(false);
 	const { currenciesData } = useAppSelector((store) => store.currency);
 	const dispatch = useAppDispatch();
 	const handleAddClick = (currency: ICurrency) => {

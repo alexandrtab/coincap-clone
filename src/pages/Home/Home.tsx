@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { Header } from "../../components/header";
@@ -9,7 +8,7 @@ import { setCurrenciesData } from "../../entities/currency/model";
 import { Button } from "../../components/button";
 
 export const Home: React.FC = () => {
-	const [limit, setLimit] = useState(20);
+	const [limit, setLimit] = useState<number>(20);
 	const dispatch = useDispatch();
 	const handleGetData = async () => {
 		const data = await handleGetCurrenciesData(limit);

@@ -21,7 +21,7 @@ import { IHistoryData } from "../../utils/types";
 
 export const Currency: React.FC = () => {
 	const { activeCurrency } = useAppSelector((store) => store.currency);
-	const [modalActive, setModalActive] = useState(false);
+	const [modalActive, setModalActive] = useState<boolean>(false);
 	const [currentHistory, setCurrentHistory] = useState<IHistoryData[]>([]);
 	const dispatch = useAppDispatch();
 	const handleAddClick = (currency: ICurrency) => {
