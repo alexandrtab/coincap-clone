@@ -5,7 +5,7 @@ import { Button } from "../../button";
 export const PortfolioModal: React.FC = () => {
 	const { portfolioCurrencies } = useAppSelector((store) => store.currency);
 	const dispatch = useAppDispatch();
-	const handleRemoveCurrencyFromPortfolio = (id: string) => {
+	const handleRemoveCurrencyFromPortfolio = (id: number) => {
 		const confirmDeleting = window.confirm(
 			"Delete this currency from Portfolio?"
 		);
@@ -14,7 +14,7 @@ export const PortfolioModal: React.FC = () => {
 		);
 
 		if (confirmDeleting) {
-			dispatch(setPortfolioCurrencies(filteredPortfolio));
+			dispatch(setPortfolioCurrencies(filteredPortfolio ?? null));
 			localStorage.setItem("currencies", JSON.stringify(filteredPortfolio));
 		} else {
 			return;

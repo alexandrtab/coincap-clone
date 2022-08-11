@@ -1,7 +1,7 @@
 export interface ICurrency {
 	changePercent24Hr: string;
 	explorer: string;
-	id: string;
+	id: number;
 	marketCapUsd: number;
 	maxSupply: number;
 	name: string;

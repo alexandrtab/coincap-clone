@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { ICurrency } from "../../../pages/Currency/types";
 
@@ -12,13 +12,13 @@ export const currencySlice = createSlice({
 	name: "currency",
 	initialState,
 	reducers: {
-		setPortfolioCurrencies: (state, action) => {
+		setPortfolioCurrencies: (state, action: PayloadAction<ICurrency[] | null >) => {
 			state.portfolioCurrencies = action.payload;
 		},
-		setActiveCurrency: (state, action) => {
+		setActiveCurrency: (state, action: PayloadAction<ICurrency>) => {
 			state.activeCurrency = action.payload;
 		},
-		setCurrenciesData: (state, action) => {
+		setCurrenciesData: (state, action: PayloadAction<ICurrency[]>) => {
 			state.currenciesData = action.payload;
 		},
 	},

@@ -1,5 +1,7 @@
-export const handleGenerateCurrencyHistoryData = (data: []) =>
-	data.map((item: { time: string }) => {
+import { IHistoryData } from "./types";
+
+export const handleGenerateCurrencyHistoryData = (data: IHistoryData[]) =>
+	data.map((item) => {
 		const currentItemDate = new Date(item.time);
 		const numberDays = currentItemDate.getDate();
 		const numberMonths = currentItemDate.getMonth();

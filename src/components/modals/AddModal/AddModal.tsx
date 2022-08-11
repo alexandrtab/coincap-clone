@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 import { useAppSelector, useAppDispatch } from "../../../app/hooks/useRedux";
 import { setPortfolioCurrencies } from "../../../entities/currency/model/currencySlice";
+import { ICurrency } from "../../../pages/Currency/types";
 import { Button } from "../../button";
 
 export const AddModal: React.FC = () => {
@@ -28,7 +29,7 @@ export const AddModal: React.FC = () => {
 
 	const handleAddCurrencyToPortfolio = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const currentCurrency = { ...activeCurrency, count: total };
+		const currentCurrency = { ...activeCurrency, count: total } as ICurrency;
 
 		if (count == undefined) {return null;}
 		if (count <= 0) {
@@ -38,12 +39,15 @@ export const AddModal: React.FC = () => {
 			const lastIdOfElements =
 				portfolioCurrencies[portfolioCurrencies.length - 1].id;
 
-			dispatch(
-				setPortfolioCurrencies([
-					...portfolioCurrencies,
-					{ ...currentCurrency, id: lastIdOfElements + 1 },
-				])
-			);
+			if (lastIdOfElements && currentCurrency) {
+				dispatch(
+					setPortfolioCurrencies([
+						...portfolioCurrencies,
+						{ ...currentCurrency, id: lastIdOfElements + 1 },
+					])
+				);
+			}
+
 			localStorage.setItem(
 				"currencies",
 				JSON.stringify([
