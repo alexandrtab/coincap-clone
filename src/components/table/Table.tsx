@@ -6,6 +6,7 @@ import { AddModal, Modal } from "../modals/index";
 import { Button } from "../button";
 import { useAppSelector, useAppDispatch } from "../../app/hooks/useRedux";
 import { ICurrency } from "../../pages/Currency/types";
+import { CurrencyPrice } from "../CurrencyPrice/CurrencyPrice";
 
 export const Table: React.FC = () => {
 	const [modalActive, setModalActive] = useState<boolean>(false);
@@ -61,7 +62,9 @@ export const Table: React.FC = () => {
 										{item.symbol}
 									</Link>
 								</td>
-								<td><span className="dollar-sign">$ </span>{parseFloat(`${item.priceUsd}`).toFixed(2)}</td>
+								<td>
+									<CurrencyPrice currencySymbol="$" price={ parseFloat(`${item.priceUsd}`).toFixed(2) } priceSize={ 1.2 } priceColor="black" />
+								</td>
 								<td>
 									<Button
 										isSubmit={ false }

@@ -5,6 +5,8 @@ $lite-green: rgb(24, 198, 131);
 	border: none;
 	transition: transform 0.2s ease 0s;
 	box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
+	background-color: black;
+	padding: 10px 20px;
 	color: $white;
 	border-radius: 10em;
 	font-size: 1rem;
@@ -30,16 +32,19 @@ $lite-green: rgb(24, 198, 131);
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
+		padding:0;
 	}
 	&-add {
 		background-color: $lite-green;
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
+		padding:0;
 	}
 	&-portfolio {
 		width: 60px;
 		height: 60px;
 		background-color: rgb(240, 240, 240);
+		padding:0;
 	}
 }
