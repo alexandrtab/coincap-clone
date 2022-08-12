@@ -5,6 +5,7 @@ import Portfolio from "../../shared/assets/portfolio.png";
 import { PortfolioModal, Modal } from "../modals/index";
 import { getTopCurrencies } from "./lib";
 import { Button } from "../button";
+import { CurrencyPrice } from "../../components/CurrencyPrice/CurrencyPrice";
 
 export const Header: React.FC = () => {
 	const { currenciesData, portfolioCurrencies } = useAppSelector(
@@ -43,8 +44,7 @@ export const Header: React.FC = () => {
 		<header>
 			{topCurrency?.map(({ id, name, priceUsd }) => (
 				<p key={ id } className="top-currency">
-					{name} : <span className="dollar-sign"> $ </span>
-					{parseFloat(`${priceUsd}`).toFixed(2)}
+					{name} : <CurrencyPrice currencySymbol="$" price={ parseFloat(`${priceUsd}`).toFixed(2) } priceSize={ 1 } priceColor="black" />
 				</p>
 			))}
 			<p className="top-currency">

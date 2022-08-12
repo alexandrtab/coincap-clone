@@ -10,7 +10,7 @@
 		"javascript",
 		"javascriptreact",
 		"typescript",
-		"typescriptreact"
+		"typescriptreact",
 	],
 	"files.exclude": {
 		"**/node_modules": true

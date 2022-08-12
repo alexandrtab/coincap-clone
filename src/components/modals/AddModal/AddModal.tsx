@@ -4,6 +4,7 @@ import { useAppSelector, useAppDispatch } from "../../../app/hooks/useRedux";
 import { setPortfolioCurrencies } from "../../../entities/currency/model/currencySlice";
 import { ICurrency } from "../../../pages/Currency/types";
 import { Button } from "../../button";
+import { CurrencyPrice } from "../../CurrencyPrice/CurrencyPrice";
 
 export const AddModal: React.FC = () => {
 	const [count, setCount] = useState<number | null>(null);
@@ -87,7 +88,7 @@ export const AddModal: React.FC = () => {
 		>
 			<div className="add-modal-window__change-block">
 				<h3>{activeCurrency?.name}</h3>
-				<h4>Price : <span className="dollar-sign">$ </span>{parseFloat(`${activeCurrency?.priceUsd}`).toFixed(2)}</h4>
+				<div style={ { display: "flex" } }><h4> Price : </h4><CurrencyPrice currencySymbol="$" price={ parseFloat(`${ activeCurrency?.priceUsd }`).toFixed(2) } priceSize={ 1.2 } priceColor="black" /></div>
 				<input
 					autoFocus={ true }
 					ref={ inputElement }
