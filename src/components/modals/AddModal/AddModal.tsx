@@ -12,12 +12,6 @@ export const AddModal: React.FC = () => {
 	const dispatch = useAppDispatch();
 	const inputElement = useRef<HTMLInputElement>(null);
 
-	useEffect(() => {
-		if (inputElement.current) {
-			inputElement.current.focus();
-		}
-	}, []);
-
 	const { activeCurrency, portfolioCurrencies } = useAppSelector(
 		(store) => store.currency
 	);
@@ -81,6 +75,14 @@ export const AddModal: React.FC = () => {
 		setTotal(0);
 	};
 
+	useEffect(() => {
+		if (inputElement.current) {
+			setTimeout(() => {
+				inputElement?.current?.focus();
+			}, 0);
+		}
+	}, [activeCurrency, inputElement]);
+
 	return (
 		<form
 			className="add-modal-window"
@@ -88,7 +90,7 @@ export const AddModal: React.FC = () => {
 		>
 			<div className="add-modal-window__change-block">
 				<h3>{activeCurrency?.name}</h3>
-				<div style={ { display: "flex" } }><h4> Price : </h4><CurrencyPrice currencySymbol="$" price={ parseFloat(`${ activeCurrency?.priceUsd }`).toFixed(2) } priceSize={ 1.2 } priceColor="black" /></div>
+				<div style={ { display: "flex" } }><h4> Price : </h4><CurrencyPrice currencySymbol="$" price={ parseFloat(`${ activeCurrency?.priceUsd }`).toFixed(2) } priceSize={ 1 } priceColor="black" /></div>
 				<input
 					autoFocus={ true }
 					ref={ inputElement }
