@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Generating history data should data be equal to snapshot 1`] = `
+Array [
+  Object {
+    "date": "2021-08-16T00:00:00.000Z",
+    "priceUsd": "46953.4801316103380567",
+    "time": "16-7-2021",
+  },
+  Object {
+    "date": "2021-08-17T00:00:00.000Z",
+    "priceUsd": "45986.5228431102022226",
+    "time": "17-7-2021",
+  },
+  Object {
+    "date": "2021-08-18T00:00:00.000Z",
+    "priceUsd": "45154.6886697612712484",
+    "time": "18-7-2021",
+  },
+  Object {
+    "date": "2021-08-19T00:00:00.000Z",
+    "priceUsd": "45226.9076561575262501",
+    "time": "19-7-2021",
+  },
+  Object {
+    "date": "2021-08-20T00:00:00.000Z",
+    "priceUsd": "47792.0212083321042055",
+    "time": "20-7-2021",
+  },
+]
+`;
