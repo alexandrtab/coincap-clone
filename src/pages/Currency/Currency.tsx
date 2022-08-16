@@ -46,11 +46,11 @@ export const Currency: React.FC = () => {
 	}
 
 	return (
-		<div>
+		<div data-testid="currency-page">
 			<div className="container">
 				<div className="currency-info">
 					<div>
-						<Link to="/">
+						<Link data-testid="home-link" to="/">
 							<p>{"< Back to Home"}</p>
 						</Link>
 					</div>

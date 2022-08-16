@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
 	return (
 		<>
 			<Header />
-			<div className="container">
+			<div data-testid="home-page" className="container">
 				<div className="greeting">
 					<div className="greeting__content">
 						<h1 className="greeting__content__title">WELCOME BACK! 👋 </h1>

@@ -13,6 +13,7 @@ export const Button: React.FC<IButtonProps> = ({
 	<>
 		{isSubmit ? (
 			<input
+				data-testid="submit-input"
 				value={ text }
 				type={ type }
 				className={ "btn" + " " + className }

@@ -13,7 +13,8 @@ describe("Button", () => {
 			className={ "" }
 		/>
 	);
-	test("should render with text", () => {
+	test("should render button", () => {
+
 		const input = screen.queryByRole("input");
 		const button = screen.getByRole("button");
 

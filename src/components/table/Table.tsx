@@ -48,6 +48,7 @@ export const Table: React.FC = () => {
 								</td>
 								<td className="currency__content__table-extra">
 									<Link
+										data-testid="currency-link"
 										to="/currency"
 										onClick={ () => handleRedirectClick(item) }
 									>
