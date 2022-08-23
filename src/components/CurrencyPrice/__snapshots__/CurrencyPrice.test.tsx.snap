@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyPrice should render correct with all props 1`] = `
+<span
+  class="currency-symbol"
+  data-testid="currency-symbol"
+>
+  $
+</span>
+`;
+
+exports[`CurrencyPrice should render correct with all props 2`] = `
+<span
+  class="currency-symbol"
+  data-testid="currency-symbol"
+>
+  $
+</span>
+`;
+
+exports[`CurrencyPrice should render correct with all props 3`] = `
+<span
+  class="currency-symbol"
+  data-testid="currency-symbol"
+>
+  $
+</span>
+`;
+
+exports[`CurrencyPrice should render correct with all props and be  1`] = `
+<div
+  data-testid="currency-price-block"
+  style="display: flex; justify-content: center; font-size: 1rem;"
+>
+  <span
+    class="currency-symbol"
+    data-testid="currency-symbol"
+  >
+    $
+  </span>
+  <p
+    data-testid="currency-price"
+    style="color: green; margin-left: 5px;"
+  />
+</div>
+`;
+
+exports[`CurrencyPrice should render correct with all props and be  2`] = `
+<p
+  data-testid="currency-price"
+  style="color: green; margin-left: 5px;"
+/>
+`;
+
+exports[`CurrencyPrice should render correct with all props and be  3`] = `
+<span
+  class="currency-symbol"
+  data-testid="currency-symbol"
+>
+  $
+</span>
+`;
+
+exports[`CurrencyPrice should render correct with all props and be equal to snapshot 1`] = `
+<div
+  data-testid="currency-price-block"
+  style="display: flex; justify-content: center; font-size: 1rem;"
+>
+  <span
+    class="currency-symbol"
+    data-testid="currency-symbol"
+  >
+    $
+  </span>
+  <p
+    data-testid="currency-price"
+    style="color: green; margin-left: 5px;"
+  />
+</div>
+`;
+
+exports[`CurrencyPrice should render correct with all props and be equal to snapshot 2`] = `
+<p
+  data-testid="currency-price"
+  style="color: green; margin-left: 5px;"
+/>
+`;
+
+exports[`CurrencyPrice should render correct with all props and be equal to snapshot 3`] = `
+<span
+  class="currency-symbol"
+  data-testid="currency-symbol"
+>
+  $
+</span>
+`;

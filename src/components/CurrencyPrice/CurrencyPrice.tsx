@@ -10,8 +10,8 @@ export const CurrencyPrice: React.FC<ICurrencyPriceProps> = ({
 }) => {
 	return (
 		<div data-testid="currency-price-block" style={ { display: "flex", justifyContent: "center", fontSize: `${priceSize}rem`, } }>
-			<span className="currency-symbol">{currencySymbol}</span>
-			<p style={ { color: priceColor, marginLeft: "5px" } }>{price}</p>
+			<span data-testid="currency-symbol" className="currency-symbol">{currencySymbol}</span>
+			<p data-testid="currency-price" style={ { color: priceColor, marginLeft: "5px" } }>{price}</p>
 		</div>
 	);
 };

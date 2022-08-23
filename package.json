@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!your-module-name)/\"",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx src",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix src",
@@ -50,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "@babel/preset-env": "^7.18.10",
     "@babel/preset-typescript": "^7.18.6",

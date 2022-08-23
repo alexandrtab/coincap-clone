@@ -84,7 +84,7 @@
     json5 "^2.2.1"
     semver "^6.3.0"
 
-"@babel/core@^7.11.6", "@babel/core@^7.12.10", "@babel/core@^7.12.17", "@babel/core@^7.18.10", "@babel/core@^7.18.5", "@babel/core@^7.7.5":
+"@babel/core@^7.11.6", "@babel/core@^7.12.10", "@babel/core@^7.12.17", "@babel/core@^7.18.5", "@babel/core@^7.7.5":
   version "7.18.10"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.18.10.tgz#39ad504991d77f1f3da91be0b8b949a5bc466fb8"
   integrity sha512-JQM6k6ENcBFKVtWvLavlvi/mPcpYZ3+R+2EySDEMSMbp7Mn4FexlbbJVrx2R7Ijhr01T8gyqrOaABWIOgxeUyw==

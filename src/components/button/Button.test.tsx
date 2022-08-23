@@ -13,7 +13,7 @@ describe("Button", () => {
 			className={ "" }
 		/>
 	);
-	test("should render button", () => {
+	test("should render button and be equal to snapshot", () => {
 
 		const input = screen.queryByRole("input");
 		const button = screen.getByRole("button");

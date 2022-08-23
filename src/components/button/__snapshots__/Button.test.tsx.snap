@@ -11,6 +11,28 @@ exports[`Button should render button 1`] = `
 
 exports[`Button should render button 2`] = `null`;
 
+exports[`Button should render button and be equal to snapshot 1`] = `
+<button
+  class="btn "
+  type="button"
+>
+  button
+</button>
+`;
+
+exports[`Button should render button and be equal to snapshot 2`] = `null`;
+
+exports[`Button should render button and data be equal to snapshot 1`] = `
+<button
+  class="btn "
+  type="button"
+>
+  button
+</button>
+`;
+
+exports[`Button should render button and data be equal to snapshot 2`] = `null`;
+
 exports[`Button should render with text 1`] = `
 <button
   class="btn "
